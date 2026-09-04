@@ -24,7 +24,7 @@ echo.
 echo [2/2] Creating new watcher task (runs at logon, background)...
 schtasks /Create /F /SC ONLOGON ^
     /TN "DemonCore-AutoSync-Watch" ^
-    /TR "powershell.exe -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File \"%~dp0AUTO-SYNC-WATCH.ps1\"" ^
+    /TR "wscript.exe \"%~dp0AUTO-SYNC-WATCH-HIDDEN.vbs\"" ^
     /IT
 if errorlevel 1 goto FAIL
 
