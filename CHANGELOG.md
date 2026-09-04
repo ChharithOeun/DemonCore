@@ -2,7 +2,25 @@
 
 All notable changes to DemonCore will be documented here. Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
+## Vision — v2.0.0 and beyond
+
+**FFXI Unreal Engine 5 remake** — DemonCore's endgame is a full UE5 reimagining of Vana'diel, targeting:
+
+- **Mandalorian-style cinematic filming** — real-time volumetric LED-wall workflow, in-camera VFX, virtual production sets built from FFXI zones
+- **AI voice acting** (Chharbot-driven) — placeholder for eventual live voice cast; every NPC and mob speaks generated dialogue tuned to job/personality/relationship
+- **Full character overhauls** — realistic-fidelity Elvaan / Hume / Mithra / Tarutaru / Galka meshes, PBR materials, motion-captured (or synth-mocap) animation
+- **Autonomous UE5 support** — Chharbot Python agent (already shipped in v1.0.0) extended to drive UE5 Blueprint state via a similar MCP surface; retail-server-side NPCs get LLM brains
+- **Server bridging** — LSB world state syncs to the UE5 instance; players can traverse between classic FFXI client and UE5 remake in the same session
+
+Waits on:
+- Mature autonomous UE5 tooling (Blueprint-generation via MCP is nascent)
+- UE5 asset pipeline (character/zone/prop budgets)
+- Legal review — SE trademark handling for a fan remake
+
+Tracked separately in `docs/UE5-VISION.md` (planned).
+
 ## [1.0.0] — 2026-09-04
+
 
 ### First public release
 
