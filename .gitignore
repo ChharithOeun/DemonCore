@@ -1,0 +1,112 @@
+# ============================================================================
+# DemonCore .gitignore
+#
+# Private-server stack — MORE restrictive than a normal repo. Nothing that
+# leaks server credentials, real IPs, character data, or DB dumps ever ships.
+# ============================================================================
+
+# --- SECRETS + CREDENTIALS (never commit) -----------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+secrets/
+credentials/
+**/config/private.*
+**/config/production.*
+
+# --- DATABASE / RUNTIME STATE -----------------------------------------------
+*.sql.dump
+*.mysqldump
+*.db
+*.sqlite
+*.sqlite3
+db_backups/
+mariadb_data/
+mysql_data/
+
+# --- CHARACTER / PLAYER DATA (privacy) --------------------------------------
+**/chars/*.dat
+**/chars/*.json
+**/characters/*
+!**/characters/.gitkeep
+**/player_data/
+**/accounts/*.json
+
+# --- SERVER RUNTIME LOGS ----------------------------------------------------
+*.log
+!CHANGELOG.md
+!**/README.md
+logs/
+map_server.log*
+world.log*
+zone_*.log*
+
+# --- ASHITA / WINDOWER LOCAL STATE ------------------------------------------
+addons/*/settings/*.xml
+!addons/*/settings/settings.example.xml
+addons/*/data/
+scripts/*_init.txt
+
+# --- CHHARBOT AGENT STATE ---------------------------------------------------
+chharbot/**/state/
+chharbot/**/history/
+chharbot/**/*.jsonl
+chharbot/**/prompt-cache/
+
+# --- SIDECAR RUNTIME --------------------------------------------------------
+sidecar/**/runtime/
+sidecar/**/*.pid
+sidecar/**/*.sock
+
+# --- PYTHON -----------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+.pytest_cache/
+pytest-cache-files-*/
+htmlcov/
+.coverage
+.tox/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+*.egg-info/
+.eggs/
+.installed.cfg
+
+# --- POWERSHELL / WINDOWS ---------------------------------------------------
+*.psd1.local
+*.psm1.local
+
+# --- EDITOR / OS ------------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# --- TEMP / BUILD -----------------------------------------------------------
+*.tmp
+*.bak
+*.old
+tmp/
+temp/
+
+# --- INSTALL/DEPLOY LOCAL PATHS ---------------------------------------------
+# The install scripts write live paths to disk; those local configs should
+# not ship. Only the .example templates go in the repo.
+config/local.*
+config/*.local.*
